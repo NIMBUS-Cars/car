@@ -43,7 +43,7 @@ class SemanticSegmentationNode:
             input_to_network = torch.from_numpy(resized_image).permute((2,0,1)).unsqueeze(0)
             input_to_network = input_to_network.type(torch.FloatTensor).to(device)
             end = time.time()
-            rospy.INFO("Time Before Input: "+str((end-start)*1000000))
+            rospy.loginfo("Time Before Input: "+str((end-start)*1000000))
             guess = self.semantic_segmentation_model(input_to_network).argmax(1).to("cpu")
             end = time.time()
             print("Time For 1 Run: "+str((end-start)*1000000))
