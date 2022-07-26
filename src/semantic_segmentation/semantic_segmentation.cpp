@@ -7,7 +7,6 @@
 #include <sensor_msgs/Image.h>
 #include "torch/torch.h"
 #include "torch/script.h"
-#include <filesystem>
 
 using namespace std;
 using namespace cv;
