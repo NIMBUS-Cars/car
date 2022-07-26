@@ -120,6 +120,7 @@ class SemanticSegmentation{
   }
 };
 int main(int argc, char ** argv) {
+    ROS_ERROR("Path To File: %s", argv[0]);
     ros::init(argc, argv, "semantic_segmentation");
     SemanticSegmentation rw;
     ros::spin();
