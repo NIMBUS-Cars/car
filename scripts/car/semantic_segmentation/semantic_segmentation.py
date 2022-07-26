@@ -17,7 +17,7 @@ bridge = cv_bridge.CvBridge()
 image_pub = rospy.Publisher("test_bounding_boxes",Image)
 
 class SemanticSegmentationNode:
-    def __init__(self) -> None:
+    def __init__(self):
         rospy.init_node('object_tracker_estimation')
 
         #Load Segmentation Model
