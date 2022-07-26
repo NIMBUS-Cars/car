@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
 
-set (CMAKE_CXX_STANDARD 17)
-
 project(car)
 
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_runtime geometry_msgs sensor_msgs OpenCV cv_bridge image_transport message_generation)
@@ -34,7 +32,6 @@ include_directories(
 )
 
 add_executable(semantic_segmentation src/semantic_segmentation/semantic_segmentation.cpp)
-set_property(TARGET semantic_segmentation PROPERTY CXX_STANDARD 17)
 add_dependencies(semantic_segmentation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(semantic_segmentation ${catkin_LIBRARIES} ${TORCH_LIBRARIES}) 
 
