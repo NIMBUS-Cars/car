@@ -34,6 +34,7 @@ include_directories(
 )
 
 add_executable(semantic_segmentation src/semantic_segmentation/semantic_segmentation.cpp)
+set_property(TARGET semantic_segmentation PROPERTY CXX_STANDARD 17)
 add_dependencies(semantic_segmentation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(semantic_segmentation ${catkin_LIBRARIES} ${TORCH_LIBRARIES}) 
 
