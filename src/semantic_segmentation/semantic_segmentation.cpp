@@ -32,8 +32,7 @@ class SemanticSegmentation{
       n = ros::NodeHandle("~");
 
       string custom_prefix = "/semantic_segmentation_node";
-      string path_to_package = std::filesystem::current_path().relative_path().parent_path().parent_path().parent_path();
-      string model_folder = "/" + path_to_package + "/src/car/models/semantic_segmentation/";
+      string model_folder = "../../../src/car/models/semantic_segmentation/";
 
       n.getParam(custom_prefix + "/network_width", network_width);
       n.getParam(custom_prefix + "/network_height", network_height);
