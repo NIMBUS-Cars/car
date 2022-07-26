@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0.2)
 
+set (CMAKE_CXX_STANDARD 17)
+
 project(car)
 
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_runtime geometry_msgs sensor_msgs OpenCV cv_bridge image_transport message_generation)
