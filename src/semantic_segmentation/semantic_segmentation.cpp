@@ -1,4 +1,5 @@
 #include <ros/ros.h>
+#include <ros/package.h>
 #include <image_transport/image_transport.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
@@ -31,7 +32,8 @@ class SemanticSegmentation{
       n = ros::NodeHandle("~");
 
       string custom_prefix = "/semantic_segmentation_node";
-      string model_folder = "../../../src/car/models/semantic_segmentation/";
+      std::string path_to_package = ros::package::getPath("car");
+      string model_folder = path_to_package + "/models/semantic_segmentation/";
 
       n.getParam(custom_prefix + "/network_width", network_width);
       n.getParam(custom_prefix + "/network_height", network_height);
