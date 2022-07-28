@@ -14,7 +14,7 @@ import time
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 bridge = cv_bridge.CvBridge()
-image_pub = rospy.Publisher("test_bounding_boxes",Image)
+image_pub = rospy.Publisher("test_bounding_boxes",Image,queue_size=10)
 
 class SemanticSegmentationNode:
     def __init__(self):
