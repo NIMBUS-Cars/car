@@ -6,4 +6,4 @@ semantic_segmentation_output_topic: "/semantic_segmentation/output_image"
 camera_topic: "/camera/color/image_raw"
 semantic_segmentation_module_path: "semanticCPPModel.pt"
 view_image: true
-semantic_segmentation_python_module_path: "models/semantic_segmentation/train_network.pth"
+semantic_segmentation_python_module_path: "models/semantic_segmentation/train_network_old_pytorch.pth"
