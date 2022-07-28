@@ -23,7 +23,7 @@ class SemanticSegmentationNode:
         #Load Segmentation Model
         path_to_network = rospy.get_param("semantic_segmentation_python_module_path")
         path_to_package = pathlib.Path(__file__).parent.parent.parent.parent.resolve().__str__()+ "/"
-        rospy.loginfo(path_to_package)
+        rospy.loginfo(path_to_package+path_to_network)
         self.semantic_segmentation_model = SemanticSegmentationModel()
         self.semantic_segmentation_model.load_state_dict(torch.load(path_to_package + path_to_network))
         self.semantic_segmentation_model.to(device)
