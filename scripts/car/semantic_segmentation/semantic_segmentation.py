@@ -14,7 +14,7 @@ import time
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 bridge = cv_bridge.CvBridge()
-image_pub = rospy.Publisher("test_bounding_boxes",Image,queue_size=10)
+image_pub = rospy.Publisher("test_bounding_boxes",Image,queue_size=1)
 
 class SemanticSegmentationNode:
     def __init__(self):
@@ -30,7 +30,7 @@ class SemanticSegmentationNode:
         self.width_of_network = rospy.get_param("network_width")
         self.height_of_network = rospy.get_param("network_height")
         self.subscriber_topic = rospy.get_param("camera_topic")
-        subscriber = rospy.Subscriber(self.subscriber_topic, Image, self.image_callback,queue_size=10)
+        subscriber = rospy.Subscriber(self.subscriber_topic, Image, self.image_callback,queue_size=1)
         rospy.spin()
 
     def image_callback(self,data):
